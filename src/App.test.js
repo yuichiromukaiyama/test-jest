@@ -1,8 +1,6 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
-
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test("fetch test", async () => {
+  const r = await fetch("http://localhost:8000/", {
+    method: "GET",
+  });
+  expect(r.status).toBe(200);
 });
